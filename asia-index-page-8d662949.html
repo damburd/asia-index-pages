@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>世界杯 · 产品说明式介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: #f8fbfd;
+            color: #1f2e3c;
+            line-height: 1.6;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* ---- hero 区域 ---- */
+        .hero {
+            padding: 3.5rem 0 1.8rem 0;
+            border-bottom: 1px solid #d9e4ec;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #12455f;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #3d728b;
+            margin-left: 0.2rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin-top: 0.75rem;
+            color: #345b6d;
+            font-size: 1.05rem;
+        }
+
+        .hero .meta-note {
+            margin-top: 0.9rem;
+            font-size: 0.9rem;
+            color: #608196;
+            border-left: 3px solid #6fadb9;
+            padding-left: 0.75rem;
+        }
+
+        /* ---- 网格卡片 ---- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 2.2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.6rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(18, 69, 95, 0.06), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #e3edf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(18, 69, 95, 0.12);
+        }
+
+        .card .icon {
+            font-size: 1.9rem;
+            margin-bottom: 0.25rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #0e3b50;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2b4f60;
+        }
+
+        .card .tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            background: #e3f0f5;
+            color: #12455f;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        /* ---- 使用场景 ---- */
+        .use-case {
+            background: #edf5f9;
+            border-radius: 1.25rem;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+
+        .use-case h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: #0f4057;
+            margin-bottom: 0.7rem;
+        }
+
+        .use-case ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1.8rem;
+        }
+
+        .use-case li {
+            position: relative;
+            padding-left: 1.4rem;
+            font-size: 0.98rem;
+            color: #1e4c60;
+        }
+
+        .use-case li::before {
+            content: "•";
+            color: #3f93a8;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ---- 提示 / FAQ 摘要 ---- */
+        .faq-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .tip-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.3rem 1.5rem;
+            border-left: 5px solid #70aeba;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .tip-item h4 {
+            font-weight: 500;
+            color: #0e3b4d;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .tip-item p {
+            font-size: 0.95rem;
+            color: #2f576a;
+        }
+
+        .tip-item .source {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #4b7e93;
+        }
+
+        /* ---- 链接与说明 ---- */
+        .link-sentence {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 0.8rem;
+            border: 1px solid #d5e3eb;
+            font-size: 1rem;
+            color: #1f3f4e;
+        }
+
+        .link-sentence a {
+            color: #18607c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #5e9db3;
+        }
+
+        .link-sentence a:hover {
+            border-bottom: 2px solid #12455f;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #5d7c8a;
+            margin-top: 1.2rem;
+            border-top: 1px solid #dbe7ed;
+            padding-top: 1.3rem;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .footnote span {
+            opacity: 0.75;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 0.5rem 2rem 0.5rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+                flex-wrap: wrap;
+            }
+            .hero {
+                padding-top: 2rem;
+            }
+            .use-case {
+                padding: 1.4rem 1rem;
+            }
+            .use-case ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .link-sentence {
+                padding: 1.3rem 1.2rem;
+            }
+            .faq-tips {
+                gap: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>⚽ 产品说明书 <small>· 世界杯</small></h1>
+        <p>
+            它不是一个热词，而是一组被反复查阅的数据、历史与对照信息。
+            日常浏览中，若你需要一份经过整理的赛事档案与延伸阅读入口，这个页面或许能承接住那些细碎的查询需求。
+        </p>
+        <div class="meta-note">
+            📋 基于公开资料汇编 · 内容仅供个人参考
+        </div>
+    </div>
+
+    <!-- 网格卡片：亮点与摘要 -->
+    <div class="grid">
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>赛事摘要</h3>
+            <p>每届世界杯的基础赛果、小组赛积分与淘汰赛轨迹。适合快速回顾某一届比赛的轮廓，而不必翻阅冗长的赛事报告。</p>
+            <span class="tag">可对照</span>
+        </div>
+        <div class="card">
+            <div class="icon">🔎</div>
+            <h3>横向对比</h3>
+            <p>不同年份的冠军、最佳射手、决赛比分并列展示，方便你在讨论历史战绩或做简单统计时直接取用，无需再逐一搜索。</p>
+            <span class="tag">可查询</span>
+        </div>
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>延伸阅读</h3>
+            <p>每届赛事附有参考来源与相关背景说明，为感兴趣的人提供一条继续深入的路标——但不过度延伸，保持克制的信息边界。</p>
+            <span class="tag">可延伸</span>
+        </div>
+    </div>
+
+    <!-- 使用场景（建议） -->
+    <div class="use-case">
+        <h2>📌 适合这样使用</h2>
+        <ul>
+            <li>想快速确认某届世界杯的决赛对阵与比分</li>
+            <li>和朋友聊球时需翻出一组历史数据做对照</li>
+            <li>写短文、做功课或准备小范围分享前查证基础信息</li>
+            <li>对某届赛事背后背景产生好奇，想找一条阅读线索</li>
+        </ul>
+    </div>
+
+    <!-- FAQ 摘要 / 提示 -->
+    <div class="faq-tips">
+        <div class="tip-item">
+            <h4>❓ 这些信息准确吗？</h4>
+            <p>内容均来源自国际足联官方记录及主流体育媒体公开报道。我们不做二次解读，只做整理与呈现。若发现偏差，建议以官方数据为准。</p>
+            <span class="source">—— 可信但建议交叉验证</span>
+        </div>
+        <div class="tip-item">
+            <h4>🧭 页面会频繁更新吗？</h4>
+            <p>该介绍页以历史资料为主，新一届周期内会做补充。更新节奏以年度为单位，不会为了流量追逐实时新闻。</p>
+        </div>
+    </div>
+
+    <!-- 嵌入链接的句子 (a标签可见文本严格等于「世界杯」) -->
+    <div class="link-sentence">
+        <p>
+            如果你只是想随手查一届比赛的概况，或者想从一个靠谱的参照系重新理解某段足球史，
+            可以从 <a href="https://asia-index-fifaworldcup.com">世界杯</a> 这个索引页面开始。
+            它更像一个书架侧面的标签，不喧哗，但指向清晰。
+        </p>
+    </div>
+
+    <!-- 结尾 / 二次说明 -->
+    <div class="footnote">
+        <span>方向：产品说明式 · 摘要 · 亮点 · 建议</span>
+        <span>内容以历史事实与公开资料为限</span>
+    </div>
+
+</div>
+</body>
+</html>
